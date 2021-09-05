@@ -43,5 +43,11 @@ def main():
                         pass_word = input("Enter the password:")
                         saveCredentials(createCredentials(account,user_name, pass_word))
                         print("Credentials uploaded successfully")
+                    elif feedback == "n":
+                        account = input("Enter the name of account, eg facebook, twitter:")
+                        user_name = input("Enter your desired username:")
+                        pass_word = randint(123456789,987456321)
+                        saveCredentials(createCredentials(account, user_name, pass_word))
+                        print(f"Hello {user_name} Your password is {pass_word}......SAVED!!!")    
 
 main()
