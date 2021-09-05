@@ -17,9 +17,6 @@ class TestUser(unittest.TestCase):
         self.assertEqual(User.displayUsers(),User.users)
         
 
-
-    
-
 if __name__ == "__main__":
     unittest.main()
 
