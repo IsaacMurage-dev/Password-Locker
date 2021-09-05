@@ -23,7 +23,7 @@ def main():
     print("Welcome to your password locker,")
     print("\n")
     while True: 
-        shortcodes= input("To create Account,type either cu or du: cu to create user : du to display user:").lower()
+        shortcodes= input("To create Account,type either: cu to create user or: du to display user:").lower()
         if shortcodes == "cu":
             username = input("Enter your username:")
             password = input("Enter your password:")
