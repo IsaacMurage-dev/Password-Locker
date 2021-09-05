@@ -25,8 +25,8 @@ def main():
     while True: 
         shortcodes= input("To create Account,type either cu or du: cu to create user : du to display user:").lower()
         if shortcodes == "cu":
-            username = input("Enter your preffered username:")
-            password = input("Enter your preffered  password:")
+            username = input("Enter your username:")
+            password = input("Enter your password:")
             saveUser(createUser(username, password))
-            print(f"Hello {username} thank you for creating your password locker account, you can now proceed")
+            print(f"Hello {username} your password locker account has been created, you can now proceed")
             print("\n")
