@@ -5,3 +5,7 @@ from random import randint
 def createUser(username, password):
     myUser = User(username, password)
     return myUser
+def saveUser(user):
+    user.saveUser()
+def displayUsers():
+    User.displayUsers()
