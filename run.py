@@ -17,8 +17,8 @@ def createCredentials(account, user_name, pass_word):
 def saveCredentials(credentials):
     credentials.saveCred()
 def displayCredentials():
-    Credentials.displayCredentials()
-
+    return Credentials.displayCredentials()
+    
 def main():
     print("Welcome to your password locker,")
     print("\n")
@@ -49,5 +49,22 @@ def main():
                         pass_word = randint(123456789,987456321)
                         saveCredentials(createCredentials(account, user_name, pass_word))
                         print(f"Hello {user_name} Your password is {pass_word}......SAVED!!!")    
+                    else:
+                        print("We didnt what you really want!!!")
+                elif code == "dc":
+                    if displayCredentials():
 
+                        for credential in displayCredentials():
+                            print(f"Account: {credential.account} Username:{credential.user_name} Password:{credential.pass_word}")
+                    else:
+                        print("No accounts to display")
+                else:   print("We didnt get what you want")
+         # below for the parent
+        elif shortcodes == "du":
+            for user in User.users:
+                print(f"{user.username}")
+        elif shortcodes == "ex":
+            print("To exit")
+            break
+        else: print("Kindly check your entry again")   
 main()
