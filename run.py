@@ -23,28 +23,28 @@ def main():
     print("Welcome to your password locker,")
     print("\n")
     while True: 
-        shortcodes= input("To create Account,type either: cu to create user or: du to display user:").lower()
+        shortcodes= input("Do the following,type; cu -to create user , du -to display user , ex -to exit:").lower()
         if shortcodes == "cu":
             username = input("Enter your username:")
             password = input("Enter your password:")
             saveUser(createUser(username, password))
-            print(f"Hello {username} your password locker account has been created, you can now proceed")
+            print(f"Hello {username} your password locker account has been created successfully")
             print("\n")
 
             while True:
                 print(f"Welcome {username} to the section of adding accounts and their passwords:")
                 print("-"*20)
-                code =input("Please choose the following to interact with the application:  cc: to create credentials: dc to display credentials:").lower()
+                code =input("To proceed, choose the following to interact with the application:  cc -to create credentials: dc -to display credentials:").lower()
                 if code == "cc":
                     feedback = input("Enter y to create your own password and n for the system to generate:").lower()
                     if feedback == ("y"):
-                        account = input("Enter the name of account, eg facebook, twitter:")
+                        account = input("Enter the name of account, eg facebook, instagram, twitter:")
                         user_name = input("Enter your desired username:")
                         pass_word = input("Enter the password:")
                         saveCredentials(createCredentials(account,user_name, pass_word))
                         print("Credentials uploaded successfully")
                     elif feedback == "n":
-                        account = input("Enter the name of account, eg facebook, twitter:")
+                        account = input("Enter the name of account, eg facebook, instagram, twitter:")
                         user_name = input("Enter your desired username:")
                         pass_word = randint(123456789,987456321)
                         saveCredentials(createCredentials(account, user_name, pass_word))
@@ -58,13 +58,15 @@ def main():
                             print(f"Account: {credential.account} Username:{credential.user_name} Password:{credential.pass_word}")
                     else:
                         print("No accounts to display")
-                else:   print("We didnt get what you want")
+                else:   print("Sorry,could not process what you want")
+                # if code == "ex":
+                        # print("Exit successful")
          # below for the parent
         elif shortcodes == "du":
             for user in User.users:
                 print(f"{user.username}")
         elif shortcodes == "ex":
-            print("To exit")
+            print("Exit successful")
             break
         else: print("Kindly check your entry again")   
 main()
